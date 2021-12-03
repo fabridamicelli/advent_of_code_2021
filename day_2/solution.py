@@ -7,7 +7,7 @@ class Move(NamedTuple):
     up: int = 0
 
 
-def load_inputs(filename) -> List[int]:
+def load_inputs(filename) -> List[Move]:
     with open(filename) as file:
         lines = [line.strip().split() for line in file]
         moves = []
