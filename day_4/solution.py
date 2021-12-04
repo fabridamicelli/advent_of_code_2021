@@ -65,14 +65,12 @@ def part1(numbers, boards):
 def part2(numbers, boards):
     winners = []
     for n in numbers:
-        boards = [mark(board, n) for board in boards]
-        for b in boards:
-            if check_board(b):
-                winners.append(b)
-                boards.remove(b)
-        if not boards:
-            return count_non_marked(winners[-1]) * n
-
+        boards = [mark(b, n) for b in boards]
+        for i, b in enumerate(boards):
+            if i not in winners and check_board(b):
+                winners.append(i)
+            if len(winners) == len(boards):
+                return count_non_marked(boards[winners[-1]]) * n
 
 if __name__ == "__main__":
     numbers, boards = load_inputs("inputs.txt")
