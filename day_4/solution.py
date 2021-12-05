@@ -72,6 +72,7 @@ def part2(numbers, boards):
             if len(winners) == len(boards):
                 return count_non_marked(boards[winners[-1]]) * n
 
+
 if __name__ == "__main__":
     numbers, boards = load_inputs("inputs.txt")
     print("solution part 1:", part1(numbers, boards))

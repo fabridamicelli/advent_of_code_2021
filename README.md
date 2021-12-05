@@ -1,6 +1,6 @@
 # Advent of code 2021
 
-Pure Python solutions for the 2021 Edition of [Advent of Code](https://adventofcode.com/).
+Pure Python (3.9) solutions for the 2021 Edition of [Advent of Code](https://adventofcode.com/).
 
 
 - Transforming binary to decimal
