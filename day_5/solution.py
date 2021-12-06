@@ -49,35 +49,25 @@ def vertical_span(m: Move):
 
 def diagonal_span(m: Move):
     assert m.is_diagonal_45()
-
     if m.x2 > m.x1 and m.y2 > m.y1:
         x = range(m.x1, m.x2+1)
         y = range(m.y1, m.y2+1)
-        return list(zip(x, y))
-
     elif m.x2 > m.x1 and m.y2 < m.y1:
         x = range(m.x1, m.x2+1)
         y = range(m.y1, m.y2-1, -1)
-        return list(zip(x, y))
-
     elif m.x2 < m.x1 and m.y2 > m.y1:
         x = range(m.x1, m.x2-1, -1)
         y = range(m.y1, m.y2+1)
-        return list(zip(x, y))
-
     elif m.x2 < m.x1 and m.y2 < m.y1:
         x = range(m.x2, m.x1+1)
         y = range(m.y2, m.y1+1)
-        return list(zip(x, y))
     else:
         raise ValueError("wrong coordinates")
+    return list(zip(x, y))
 
 
 def n_overlaps(grid):
-    n = 0
-    for row in grid:
-        n += sum(e > 1 for e in row)
-    return n
+    return sum(e > 1 for row in grid for e in row)
 
 
 Grid = list[list[int]]
