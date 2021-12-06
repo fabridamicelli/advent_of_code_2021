@@ -6,9 +6,9 @@ def load_inputs(filename):
         return list(map(int, file.read().strip().split(",")))
 
 
-def step_dict(count):
+def update_count(count):
     new_count = {}
-    new_count[6] = count[0] + count[7]
+    new_count[6] = count[0] + count[7]  # reset + previous
     new_count[8] = count[0]  # offspring
     for k in range(1, 9):
         if k == 7:
@@ -18,12 +18,12 @@ def step_dict(count):
 
 
 def solve():
-    timers = defaultdict(int, Counter(load_inputs("inputs.txt")))
+    count = defaultdict(int, Counter(load_inputs("inputs.txt")))
     for t in range(256):
         if t == 80:
-            print("Solution part 1:", sum(timers.values()))
-        timers = step_dict(timers)
-    print("Solution part 2:", sum(timers.values()))
+            print("Solution part 1:", sum(count.values()))
+        count = update_count(count)
+    print("Solution part 2:", sum(count.values()))
 
 
 solve()
