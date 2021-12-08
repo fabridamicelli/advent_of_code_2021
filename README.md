@@ -5,13 +5,11 @@ Pure Python (3.9) solutions for the 2021 Edition of [Advent of Code](https://adv
 ## Learnings
 
 - Transforming binary to decimal  
-Example:
 ```python
 int("1001", 2)
 >> 9
 ```
-- `str` method `translate`
-Example:
+- `str` method `translate`  
 ```python
 string = "01234"
 table = "".maketrans(
