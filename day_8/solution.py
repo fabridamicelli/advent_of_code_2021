@@ -1,5 +1,5 @@
 from typing import NamedTuple
-from itertools import permutations, islice
+from itertools import permutations
 
 
 class Signal(NamedTuple):
