@@ -65,11 +65,11 @@ def value(p: Point, g: Grid) -> int:
 
 def find_basin(p: Point, g: Grid):
     basin = set([p])
-    queue = [p]
-    while queue:
-        current = queue.pop()
+    stack = [p]
+    while stack:
+        current = stack.pop()
         neigs = [n for n in neighbors(current, g) if value(n, g) > value(current, g)]
-        queue += neigs
+        stack += neigs
         basin.update(neigs)
     return basin
 
