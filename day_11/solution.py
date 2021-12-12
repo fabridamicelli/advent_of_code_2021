@@ -92,7 +92,7 @@ def step(octopi):
 
 def part1(octopi):
     total = 0
-    for i in range(100):
+    for _ in range(100):
         octopi, n_flashes, _ = step(octopi)
         total += n_flashes
     return total
