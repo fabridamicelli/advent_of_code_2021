@@ -11,6 +11,8 @@ def make_graph(inputs):
     for i, j in inputs:
         if i == "start":
             g[i] += (j,)
+        elif j == "start":
+            g[j] += (i,)
         else:
             g[i] += (j,)
             g[j] += (i,)
