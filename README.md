@@ -12,12 +12,18 @@ int("1001", 2)
 - `str` method `translate`  
 ```python
 string = "01234"
-table = "".maketrans(
-    {
-        "4": "777",
-        "0": "22"
-    }
-)
+table = "".maketrans({"4": "777", "0": "22"})
 string.translate(table)
 >> "22123777"
+
+- heapq out of the box
+
+```python
+from heapq import heapify, heappop
+
+l = [4,2,4,125,5]
+heapify(l)   # convert list to heap 
+heappop(l)
+>> 2
 ```
+```python
